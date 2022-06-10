@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DataContextProvider from "./context/PostContext";
+// import { Route, Routes } from "react-router-dom";
+import { Posts, PostDetails } from "./pages/index";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DataContextProvider>
+        <Posts />
+      </DataContextProvider>
+
+      {/* <Routes>
+        <Route path="/posts/:id" element={<PostDetails />}></Route>
+        <Route path="/posts" element={<Posts />}></Route>
+        <Route path="/" element={<Posts />}></Route>
+      </Routes> */}
     </div>
   );
 }
